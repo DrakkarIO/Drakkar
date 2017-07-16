@@ -1,4 +1,13 @@
 {
-	"Welcome": "Welcome",
-	"A brand new app.": "A brand new app."
+  "Welcome": "Welcome",
+  "A brand new app.": "A brand new app.",
+  
+  "One or more fields have failed the validation process.": "One or more fields have failed the validation process.",
+  
+  "user.username.alphanumericdashed": "The username can only be composed of alphanumeric characters and dashes (a-z, A-Z, 0-9, -_).",
+	"user.username.minLength": "The username must contain at least 4 characters.",
+	"user.username.maxLength": "The username can not exceed 20 characters.",
+	"user.username.required": "The username is required.",
+  "user.username.unique": "This username is not available.",
+  "user.email.unique": "This e-mail address is already registered."
 }

@@ -8,6 +8,7 @@
 /*global User*/
 /*global ActivationEmailCode*/
 /*global UtilityService*/
+/*global ImageUploadService*/
 
 module.exports = {
 	 _config: {

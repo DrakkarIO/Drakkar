@@ -20,7 +20,7 @@ module.exports = {
 		username: {
 			type: 'string',
 			alphanumericdashed: true,
-			minLength: 3,
+			minLength: 4,
 			maxLength: 20,
 			required: true,
 			unique: true

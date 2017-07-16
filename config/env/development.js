@@ -22,6 +22,8 @@ module.exports = {
     migrate: 'alter'
   },
 
+  url: 'http://exemple.com',
+
   /**
    * This configuration is for the Redis Shared Cache between all the App instances
    * 
@@ -32,6 +34,10 @@ module.exports = {
     port: 6379,
     db: 0, 
     ttl: 600 // Default ttl for keys
+  },
+  
+  registration: {
+    enabled: true
   },
   
   passwordReset: {
@@ -60,7 +66,7 @@ module.exports = {
     // Root URL for the images (e.g. 'http://exemple.com/images/')
     URL: 'https://cnd.exemple.com/',
     // Path where the image should be written (Make sure that the folders exists)
-    datapath: '/home/user/images/'
+    datapath: '/home/user/images/',
   },
   
   s3: {

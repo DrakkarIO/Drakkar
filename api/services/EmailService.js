@@ -40,7 +40,7 @@ module.exports = {
 		// Parameters for the swig template
 		let context = {
 			username: user.username,
-			confirmurl: sails.config.PATH + '/activate-account?key=' + user.validationCode[0].code + '&username=' + user.username //TODO: CONFIG PARAMETER BRO
+			confirmurl: sails.config.rootPath + '/activate-account?key=' + user.validationCode[0].code + '&username=' + user.username //TODO: CONFIG PARAMETER BRO
 		};
 
 		templates.render('confirmEmail.html', context, function(err, html, text, subject) {
@@ -91,7 +91,7 @@ module.exports = {
 		let context = {
 			username: user.username,
 			//reseturl: 'http://198.50.173.88:1337/api/user/resetpassword?code=' + code.code //TODO: CONFIG PARAMETER BRO // MOVED TO FRONTEND
-			reseturl: sails.config.PATH + '/reset-password?code=' + code.code
+			reseturl: sails.config.rootPath + '/reset-password?code=' + code.code
 		};
 		
 		templates.render('passwordReset.html', context, function(err, html, text, subject) {

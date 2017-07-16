@@ -47,7 +47,7 @@ module.exports = {
 	 * @param {Object} res - Response object from the Express module
 	 */
     logout: function(req, res) {
-        req.logout();
+        if (req.user) req.logout();
         res.redirect('/');
     },
 	
@@ -62,19 +62,30 @@ module.exports = {
             // Check if it's a validation error
             if (err.code && err.code === 'E_VALIDATION') {
                 if (err.invalidAttributes) {
-                    for(let attribute in err.invalidAttributes) {
-                        // Output custom messages depending on the attribute that failed
-                        
-                    }
+                    let validationError = {
+                        code: 'ERR_VALIDATION',
+                        message: sails.__({
+                            phrase: "One or more fields have failed the validation process.",
+                            locale: sails.config.i18n.getLocal()
+                        })
+                    };
+                    
+                    if (err.Errors) validationError.invalidAttributes = err.Errors;
+                    
                     // if nothing matched the specific error messages
-                    return res.json(400, {message: 'One of the fields failed the validation process.'});
+                    return res.json(400, validationError);
                 }
             }
             
             return res.json(500, err);
         };
         
-        if (sails.config.registration.disabled) return res.json(403, 'Cannot register at the moment.');
+        if (!sails.config.registration.enabled) return res.json(403, {
+            message: sails.__({
+                phrase: "You cannot register at the moment.",
+                locale: sails.config.i18n.getLocal()
+            })
+        });
         
         User.create({
             username: req.param('username'),

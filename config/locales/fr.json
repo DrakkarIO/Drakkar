@@ -1,4 +1,14 @@
 {
-	"Welcome": "Bienvenue",
-	"A brand new app.": "Une toute nouvelle application."
+  "Welcome": "Bienvenue",
+  "A brand new app.": "Une nouvelle application.",
+  
+  "One or more fields have failed the validation process.": "Un ou plusieurs champs ont échoué le processus de validation.",
+  "You cannot register at the moment.": "Vous ne pouvez pas vous inscrire en ce moment.",
+  
+	"user.username.alphanumericdashed": "Le nom d'utilisateur ne peux être composé que de caractère alphanumerique et de tiret (a-z, A-Z, 0-9, -_).",
+	"user.username.minLength": "Le nom d'utilisateur doit contenir au minimum 4 caractères.",
+	"user.username.maxLength": "Le nom d'utilisateur ne peux dépasser 20 caractères.",
+	"user.username.required": "Le nom d'utilisateur est requis.",
+	"user.username.unique": "Ce nom d'utilisateur n'est pas disponible.",
+  "user.email.unique": "Cette address courriel est déjà utilisé."
 }

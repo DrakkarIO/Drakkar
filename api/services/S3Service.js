@@ -7,7 +7,8 @@
 
 /*global sails*/
 
-let S3 = require('aws-sdk').S3(sails.config.s3.credentials);
+const AWSSDK = require('aws-sdk');
+let S3 = new AWSSDK.S3(sails.config.s3.credentials);
 
 module.exports = {
     // Export the s3 initialized attribute so we can manually use it outside of this module.

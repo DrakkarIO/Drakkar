@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +45,14 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
+  /** Authentication Routes **/
+  'post /api/signup': 'AuthController.signup',
+  'post /api/login': 'AuthController.login',
+  'post /api/logout': 'AuthController.logout',
+  
+  /** User Management Routes **/
+  'post /api/user/email/confirm': 'ActivationController.confirmEmail',
+  'post /api/user/password/change': 'UserController.changePassword',
+  'post /api/user/username/change': 'UserController.changeUsername',
+  'post /api/user/username/check': 'UserController.validUsername'
 };

@@ -190,7 +190,7 @@ module.exports = {
         }
         // Upload to a local directory
         else {
-            fs.writeFile(sails.config.image.datapath, image.data, function(err) {
+            fs.writeFile(sails.config.image.datapath + image.name + '.' + image.extension, image.data, function(err) {
                 if (err) return cb(err);
             });
         }
